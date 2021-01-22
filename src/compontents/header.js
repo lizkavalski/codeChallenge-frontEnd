@@ -30,7 +30,7 @@ function Header(){
       >
         <Box>
           <h1 id='title'className={styles.title}>Code Challenge Review!</h1>
-          <h3 id='sub-title' className={styles.subTitle}> Click the 'Next' button for the next question!</h3>
+          <h3 id='sub-title' className={styles.subTitle}> Click the 'Next' button for a new challenge!</h3>
         </Box>
       </Grid>
     </>
