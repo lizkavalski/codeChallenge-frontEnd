@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, Props } from 'react';
 import axios from 'axios';
 import {Box, Button, Grid, CircularProgress, Card} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
@@ -38,22 +38,17 @@ const useStyles = makeStyles({
 });
 
 function Challenge(){
-  const [challenge, setChallenge] = useState('');
+  const [challenge, setChallenge] = useState('click the button');
   const [loading, setLoading]= useState(true);
-  const [fetching, setFetching]=useState(false);
   const styles= useStyles();
   const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
   
-  useEffect(() =>{
-    const fetchData = async () => { 
-      setLoading(true);
-      const respone = await axios.get(url);
-      setChallenge(`${respone.data}`);
-      console.log('this is the challeng:', respone.data);
-      setLoading(false);
-    };
-    fetchData();
-  },[fetching]);
+  
+  const fetchData = async () => { 
+    const respone = await axios.get(url);
+    setChallenge(`${respone.data}`);
+    console.log('this is the challege:', challenge);
+  };
 
 
   return(
@@ -64,14 +59,10 @@ function Challenge(){
         alignItems="center"
       >
         <Card className={styles.noteCard}>
-          {loading ? (
-            <CircularProgress variant="determinate" value={50} />
-          ):(
-            <Box className={styles.noteCardWriting}>{challenge}</Box>
-          )}
+          <Box className={styles.noteCardWriting}>{challenge}</Box>
           <Box className={styles.buttonBox}>
             <Button className={styles.nButton} onClick={() => 
-              setFetching(!fetching)}> Next</Button>
+              fetchData()}> Next</Button>
           </Box>
         </Card>
       </Grid>
