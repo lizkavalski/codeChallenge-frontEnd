@@ -38,15 +38,14 @@ const useStyles = makeStyles({
 });
 
 function Challenge(){
-  const [challenge, setChallenge] = useState('click the button');
-  const [loading, setLoading]= useState(true);
+  const [challenge, setChallenge] = useState('click "Next" button to begin');
   const styles= useStyles();
   const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
   
   
   const fetchData = async () => { 
     const respone = await axios.get(url);
-    setChallenge(`${respone.data}`);
+    setChallenge(respone.data);
     console.log('this is the challege:', challenge);
   };
 
@@ -59,10 +58,9 @@ function Challenge(){
         alignItems="center"
       >
         <Card className={styles.noteCard}>
-          <Box className={styles.noteCardWriting}>{challenge}</Box>
+          {/* <Box className={styles.noteCardWriting}>{challenge}</Box> */}
           <Box className={styles.buttonBox}>
-            <Button className={styles.nButton} onClick={() => 
-              fetchData()}> Next</Button>
+            <Button className={styles.nButton} onClick={fetchData}> Next</Button>
           </Box>
         </Card>
       </Grid>
