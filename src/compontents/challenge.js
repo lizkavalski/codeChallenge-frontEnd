@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 });
 
 function Challenge(){
-  const [challenge, setChallenge] = useState('click "Next" button to begin');
+  const [challenge, setChallenge] = useState('Click "next" button');
   const styles= useStyles();
   const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
   
@@ -58,7 +58,7 @@ function Challenge(){
         alignItems="center"
       >
         <Card className={styles.noteCard}>
-          {/* <Box className={styles.noteCardWriting}>{challenge}</Box> */}
+          <Box className={styles.noteCardWriting}>{challenge.title}</Box>
           <Box className={styles.buttonBox}>
             <Button className={styles.nButton} onClick={fetchData}> Next</Button>
           </Box>
