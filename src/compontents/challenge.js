@@ -1,4 +1,5 @@
 import React, {useState, useEffect, Props } from 'react';
+// import Awswer from './answers';
 import axios from 'axios';
 import {Box, Button, Grid, CircularProgress, Card} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
@@ -38,17 +39,16 @@ const useStyles = makeStyles({
 });
 
 function Challenge(){
-  const [challenge, setChallenge] = useState('Click "next" button');
+  const [challenge, setChallenge] = useState({title:'Click "next" button to get started'});
   const styles= useStyles();
-  const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
-  
+  const [flip, setFlip] = useState(false);
+  // const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
+  const url = 'http://localhost:3030/random/challenge';
   
   const fetchData = async () => { 
     const respone = await axios.get(url);
     setChallenge(respone.data);
-    console.log('this is the challege:', challenge);
   };
-
 
   return(
     <>
@@ -58,7 +58,13 @@ function Challenge(){
         alignItems="center"
       >
         <Card className={styles.noteCard}>
-          <Box className={styles.noteCardWriting}>{challenge.title}</Box>
+          <Box className={styles.noteCardWriting}>
+            <h1>{challenge.title}</h1>
+            <p>{challenge.problem}</p>
+            <img src={challenge.pseudocode}/>
+            <button className={`card ${flip ? 'flip' : ''}`} onClick={() => setFlip(!flip)}>test</button>
+          </Box>
+
           <Box className={styles.buttonBox}>
             <Button className={styles.nButton} onClick={fetchData}> Next</Button>
           </Box>
