@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Props } from 'react';
 // import Awswer from './answers';
 import axios from 'axios';
+import ReactCardFlip from 'react-card-flip';
 import {Box, Button, Grid, CircularProgress, Card} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
 
@@ -36,40 +37,51 @@ const useStyles = makeStyles({
     height: 48,
     padding: '0 30px',
   },
+  images:{
+    width:'15em',
+  },
 });
 
 function Challenge(){
   const [challenge, setChallenge] = useState({title:'Click "next" button to get started'});
   const styles= useStyles();
-  const [flip, setFlip] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   // const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
+  // handleClick = handleClick.bind();
   const url = 'http://localhost:3030/random/challenge';
   
   const fetchData = async () => { 
     const respone = await axios.get(url);
     setChallenge(respone.data);
   };
+  const handleClick =()=>{
+    setIsFlipped(!isFlipped);
+  };
 
   return(
     <>
-      <Grid 
-        direction="column"
-        justify="center" 
-        alignItems="center"
-      >
-        <Card className={styles.noteCard}>
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+        <div>
           <Box className={styles.noteCardWriting}>
             <h1>{challenge.title}</h1>
             <p>{challenge.problem}</p>
-            <img src={challenge.pseudocode}/>
-            <button className={`card ${flip ? 'flip' : ''}`} onClick={() => setFlip(!flip)}>test</button>
+            <img className={styles.images} src={challenge.visual}/>
+            <button onClick={handleClick}>Flip Card</button>
           </Box>
-
-          <Box className={styles.buttonBox}>
-            <Button className={styles.nButton} onClick={fetchData}> Next</Button>
+        </div>
+        <div>
+          <Box className={styles.noteCardWriting}>
+            <h1>{challenge.title}</h1>
+            <p>{challenge.algorthism}</p>
+            {/* algorthism */}
+            <img className={styles.images} src={challenge.pseudocode}/>
+            <button onClick={handleClick}>Flip Card</button>
           </Box>
-        </Card>
-      </Grid>
+        </div>
+      </ReactCardFlip>
+      <Box className={styles.buttonBox}>
+        <Button className={styles.nButton} onClick={fetchData}> Next</Button>
+      </Box>
     </>
   );
 }
