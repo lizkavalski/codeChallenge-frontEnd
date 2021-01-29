@@ -46,9 +46,8 @@ function Challenge(){
   const [challenge, setChallenge] = useState({title:'Click "next" button to get started'});
   const styles= useStyles();
   const [isFlipped, setIsFlipped] = useState(false);
-  // const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
-  // handleClick = handleClick.bind();
-  const url = 'http://localhost:3030/random/challenge';
+  const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
+  // const url = 'http://localhost:3030/random/challenge';
   
   const fetchData = async () => { 
     const respone = await axios.get(url);
@@ -56,6 +55,22 @@ function Challenge(){
   };
   const handleClick =()=>{
     setIsFlipped(!isFlipped);
+  };
+  const algListItem =()=>{
+    let items = challenge.algorthism;
+    return(
+      <ul>
+        {
+          items.map((val, index) => {
+            return (
+              <li key={index}>
+                { val }
+              </li>
+            );
+          })
+        }
+      </ul>
+    );
   };
 
   return(
@@ -72,7 +87,7 @@ function Challenge(){
         <div>
           <Box className={styles.noteCardWriting}>
             <h1>{challenge.title}</h1>
-            <p>{challenge.algorthism}</p>
+            {algListItem()}
             {/* algorthism */}
             <img className={styles.images} src={challenge.pseudocode}/>
             <button onClick={handleClick}>Flip Card</button>
