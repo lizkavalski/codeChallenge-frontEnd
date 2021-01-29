@@ -43,7 +43,10 @@ const useStyles = makeStyles({
 });
 
 function Challenge(){
-  const [challenge, setChallenge] = useState({title:'Click "next" button to get started'});
+  const [challenge, setChallenge] = useState({
+    title:'Click "next" button to get started',
+    algorthism:['worng button'],
+  });
   const styles= useStyles();
   const [isFlipped, setIsFlipped] = useState(false);
   const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
@@ -62,6 +65,9 @@ function Challenge(){
       <ul>
         {
           items.map((val, index) => {
+            if(items.map === undefined){
+              return( 'Click "next" button to get started');
+            }
             return (
               <li key={index}>
                 { val }
@@ -76,7 +82,7 @@ function Challenge(){
   return(
     <>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <div>
+        <div className={styles.noteCard}>
           <Box className={styles.noteCardWriting}>
             <h1>{challenge.title}</h1>
             <p>{challenge.problem}</p>
