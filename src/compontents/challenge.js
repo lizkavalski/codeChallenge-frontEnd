@@ -6,6 +6,8 @@ import {Box, CircularProgress} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
 import ImageFlip from '../assests/imageFlip.webp';
 
+let askedChallenge = [];
+
 const useStyles = makeStyles({
   noteCard:{
     background:'rgba(255,255,255,0.5)',
@@ -84,8 +86,14 @@ function Challenge(){
   const fetchData = async () => { 
     setLoading(true);
     const respone = await axios.get(url);
+    if(askedChallenge.includes(respone.data)){
+      fetchData();
+    }
+    askedChallenge.push(respone.data);
+    askedChallenge.flat();
     setChallenge(respone.data);
     setLoading(false);
+    console.log('this is the array',askedChallenge);
   };
   const handleClick =()=>{
     setIsFlipped(!isFlipped);
