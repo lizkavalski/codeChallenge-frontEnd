@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 // import Awswer from './answers';
 import axios from 'axios';
 import ReactCardFlip from 'react-card-flip';
-import {Box, CircularProgress} from'@material-ui/core/';
+import {Box, CircularProgress, Grid} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
 import ImageFlip from '../assests/imageFlip.webp';
 
@@ -10,16 +10,16 @@ const useStyles = makeStyles({
   noteCard:{
     background:'rgba(255,255,255,0.5)',
     boxShadow: '.5em .5em .3em #9c9c9c',
-    paddingBottom:'3em',
-    marginLeft:'5em',
-    marginRight:'5em',
+    paddingBottom:3,
+    marginLeft:50,
+    marginRight:50,
   },
   noteCardWriting:{
-    fontSize:'3em',
+    fontSize:40,
     fontFamily:['Nanum Pen Script', 'cursive'],
-    addingBottom:'1em',
-    marginLeft:'2em',
-    marginRight:'2em',
+    paddingBottom:25,
+    marginLeft:30,
+    marginRight:30,
   },
   cardTitle:{
     textAlign: 'center', 
@@ -27,7 +27,8 @@ const useStyles = makeStyles({
   cardConsents:{
     display:'flex',
     flexDirection:'row',
-
+    marginLeft:50,
+    marginRight:50,
   },
   buttonBox:{
     display:'flex',
@@ -62,7 +63,8 @@ const useStyles = makeStyles({
     width:360,
   },
   images:{
-    width:'15em',
+    marginLeft:30,
+    width:550,
   },
   symbol:{
     width:35,
@@ -109,12 +111,17 @@ function Challenge(){
   };
 
   return(
-    <>
+    <Grid 
+      direction="column"
+      justify="center" 
+      alignItems="center"
+      item sx={5}
+    >
       <Box className={styles.noteCard}>
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
           <div>
             {loading ? (
-              <CircularProgress variant="determinate" value={50} />
+              <CircularProgress className={styles.noteCard.loadingImg}/>
             ):(
               <Box className={styles.noteCardWriting}>
                 <h1 className={styles.cardTitle}>{challenge.title}</h1>
@@ -147,7 +154,7 @@ function Challenge(){
           </div>
         </ReactCardFlip>
       </Box>
-    </>
+    </Grid>
   );
 }
 

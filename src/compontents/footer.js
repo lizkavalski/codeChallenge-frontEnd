@@ -9,13 +9,6 @@ const useStyles = makeStyles({
     fontSize:'1.5em',
     fontFamily:['Black Ops One','cursive'],
   },
-  borderBox:{
-    backgroundColor: 'pink',
-    width: '100em',
-    height: '5em',
-    borderRadius:'4em',
-    marginTop:'3em',
-  },
 });
 
 function Footer(){
@@ -23,8 +16,6 @@ function Footer(){
   return(
     <>
       <Grid
-        container
-        margin="0, auto"
         direction="column"
         justify="center"
         alignItems="center"
