@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from'@material-ui/core/';
+import {Box, Container} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
 
 
@@ -16,10 +16,15 @@ function Header(){
   const styles= useStyles();
   return(
     <>
-      <Box>
-        <h1 id='title'className={styles.title}>Code Challenge Review!</h1>
-      </Box>
-   
+      <Container
+        direction="column"
+        justify="center" 
+        alignItems="center"
+      >
+        <Box>
+          <h1 id='title'className={styles.title}>Code Challenge Review!</h1>
+        </Box>
+      </Container>
     </>
   );
 }
