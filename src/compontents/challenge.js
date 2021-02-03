@@ -5,6 +5,7 @@ import ReactCardFlip from 'react-card-flip';
 import {Box, CircularProgress, Container} from'@material-ui/core/';
 import {makeStyles} from '@material-ui/core/styles';
 import ImageFlip from '../assests/imageFlip.webp';
+import Markers from '../assests/markersByMarkRabeOnUnsplash.jpg';
 
 const useStyles = makeStyles({
   noteCard:{
@@ -83,6 +84,8 @@ function Challenge(){
   const [challenge, setChallenge] = useState({
     title:'Click "next" button to get started',
     algorthism:['Click the "Flip Card Back" button', 'then click the blue butten that says "Next"', 'Begin praticing code challenges'],
+    visual: Markers,
+    pseudocode: Markers,
   });
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading]= useState(false);
