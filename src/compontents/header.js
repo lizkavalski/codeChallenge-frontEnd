@@ -4,11 +4,20 @@ import {makeStyles} from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles({
-  title:{
-    textAlign: 'center',
-    textShadow:'3px 5px 2px #9c9c9c',
-    fontSize:'4em',
+  header:{
+    textAlign:'center',
     fontFamily:['Black Ops One','cursive'],
+  },
+  title:{
+    textShadow:'3px 5px 2px #9c9c9c',
+    fontSize:60,
+    margin:0,
+    padding:0,
+  },
+  subTitle:{
+    fontSize:25,
+    margin:0,
+    padding:0,
   },
 });
 
@@ -21,8 +30,9 @@ function Header(){
         justify="center" 
         alignItems="center"
       >
-        <Box>
+        <Box className={styles.header}>
           <h1 id='title'className={styles.title}>Code Challenge Review!</h1>
+          <h6 className={styles.subTitle}> All 'answers' are plausible soluions to the code challenges</h6>
         </Box>
       </Container>
     </>
