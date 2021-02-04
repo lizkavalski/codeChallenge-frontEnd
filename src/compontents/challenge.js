@@ -23,7 +23,10 @@ const useStyles = makeStyles({
     minWidth:300,
   },
   cardTitle:{
-    textAlign: 'center', 
+    textAlign: 'center',
+    marginBottom:0,
+    padding:0,
+    
   },
   cardConsents:{
     display:'flex',
