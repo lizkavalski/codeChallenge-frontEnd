@@ -20,18 +20,16 @@ const useStyles = makeStyles({
 function Footer(){
   const styles= useStyles();
   return(
-    <>
-      <Grid
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <Box className = {styles.borderBox} >
-          <h3 id='footnote' className={styles.footnote}>© 2021 </h3>
-          <h3 className={styles.footnote}>*All challenges are based on Leet problems*</h3>
-        </Box>
-      </Grid>
-    </>
+    <Grid
+      direction="column"
+      justify="center"
+      alignItems="center"
+    >
+      <Box className = {styles.borderBox} >
+        <h3 id='footnote' className={styles.footnote}>© 2021 </h3>
+        <h3 className={styles.footnote}>*All challenges are based on Leet problems*</h3>
+      </Box>
+    </Grid>
   );
 }
 
