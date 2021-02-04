@@ -8,8 +8,8 @@ const useStyles = makeStyles({
     textAlign: 'center',
     // fontSize:'1.5em',
     fontFamily:['Black Ops One','cursive'],
-    marginTop:8,
-    marginBottom:8,
+    marginTop:20,
+    paddingBottom:20,
   },
   footnote:{
     margin:0,
