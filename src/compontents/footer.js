@@ -27,7 +27,7 @@ function Footer(){
     >
       <Box className = {styles.borderBox} >
         <h3 id='footnote' className={styles.footnote}>© 2021 </h3>
-        <h3 className={styles.footnote}>*All challenges are based on Leet problems*</h3>
+        <h3 className={styles.footnote}>*All challenges are based on LeetCode problems*</h3>
       </Box>
     </Grid>
   );
