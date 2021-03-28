@@ -93,8 +93,8 @@ function Challenge(){
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading]= useState(false);
   const styles= useStyles();
-  const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
-  // const url = 'http://localhost:3030/random/challenge';
+  // const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
+  const url = 'http://localhost:3030/random/challenge';
   
   const fetchData = async () => { 
     setLoading(true);
