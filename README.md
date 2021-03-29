@@ -1,4 +1,5 @@
 # Code Challenge Flash Cards
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9f18af1f-d219-46a6-a2b5-86561500db98/deploy-status)](https://app.netlify.com/sites/code-chellenge-flash-card/deploys)
 
 ### Summery
 Display a random code challenges questions to help someone, who is interviewing for a tech industry, to feel more prepare for a techincal interveiw.
@@ -8,7 +9,7 @@ Languages used: JavaScript framework -React
 Tools used :Axios, @material-ui, Google Fonts, and ReactCardFlip
 
 Deployed Site:
-[Code Challenge Flash Card](https://gracious-goodall-874d4c.netlify.app/)
+[Code Challenge Flash Card](https://code-chellenge-flash-card.netlify.app/)
 
 ### Problem Domain:
 Create an application that can help people feel more prepare when going into a tech interview, in term of when they are asked a Whiteboard question. A whiteboard question in this case is when the interviewer ask the interviewee a coding problem during the interview process. The interviewee then have to solve the code problem. The point of the interview is to show case the interviewee [problem solving skills and communication](https://skillcrush.com/blog/rock-your-next-whiteboard-test/#:~:text=A%20whiteboard%20interview%20is%20a,and%20go%20over%20your%20solution.).
