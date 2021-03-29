@@ -8,7 +8,7 @@ Languages used: JavaScript framework -React
 Tools used :Axios, @material-ui, Google Fonts, and ReactCardFlip
 
 Deployed Site:
-[Code Challenge Flash Card](https://gracious-kalam-d9cffc.netlify.app/)
+[Code Challenge Flash Card](https://gracious-goodall-874d4c.netlify.app/)
 
 ### Problem Domain:
 Create an application that can help people feel more prepare when going into a tech interview, in term of when they are asked a Whiteboard question. A whiteboard question in this case is when the interviewer ask the interviewee a coding problem during the interview process. The interviewee then have to solve the code problem. The point of the interview is to show case the interviewee [problem solving skills and communication](https://skillcrush.com/blog/rock-your-next-whiteboard-test/#:~:text=A%20whiteboard%20interview%20is%20a,and%20go%20over%20your%20solution.).
