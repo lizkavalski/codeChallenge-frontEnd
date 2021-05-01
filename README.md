@@ -28,4 +28,4 @@ Create a flash card game that ask a random code challenge. With using a ‘flash
 
 The card has two sides: a front and back.The front shows the problem, and a visual. Then when a button is clicked ‘flip’ to the back and shows a plausible algorithm, and pseudocode. The challenges are based on [LeetCode](https://leetcode.com/problemset/all/) challenges so the person can test out their code in LeetCode. Also all algorithm and pseudocode are a possible solution, because in code their are many ways to get to the solution.
 
-This is done by the user clicking a button for a random challenge. When the button is clicked it send the api to get random challenge from it server. Then renders a questions to the user. For more infomation on the backend-end visit [here](https://github.com/lizkavalski/codeChallenges-backend)
+This is done by the user clicking a button for a random challenge. When the button is clicked it send the api to get random challenge from it server. Then renders a questions to the user. For more information on the backend-end visit [here](https://github.com/lizkavalski/codeChallenges-backend)
