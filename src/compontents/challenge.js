@@ -86,7 +86,7 @@ const useStyles = makeStyles({
 function Challenge(){
   const [challenge, setChallenge] = useState({
     title:'Click "next" button to get started',
-    algorthism:['Click the "Flip Card Back" button', 'then click the blue butten that says "Next"', 'Begin praticing code challenges'],
+    algorithm:['Click the "Flip Card Back" button', 'then click the blue butten that says "Next"', 'Begin praticing code challenges'],
     visual: Markers,
     pseudocode: Markers,
   });
@@ -106,10 +106,10 @@ function Challenge(){
     setIsFlipped(!isFlipped);
   };
   const algListItem =()=>{
-    let items = challenge.algorthism;
+    let items = challenge.algorithm;
     return(
       <ul className={styles.problemAndAlg}>
-        Algorthism:
+        Algorithm:
         {
           items.map((val, index) => {
             return (
