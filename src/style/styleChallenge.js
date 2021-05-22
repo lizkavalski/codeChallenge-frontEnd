@@ -1,6 +1,6 @@
 import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const styleChallenge = makeStyles({
   noteCard:{
     background:'rgba(255,255,255,0.5)',
     boxShadow: '.5em .5em .3em #9c9c9c',
@@ -77,4 +77,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default useStyles;
+export default styleChallenge;

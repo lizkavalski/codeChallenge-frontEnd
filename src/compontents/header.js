@@ -1,28 +1,9 @@
 import React from 'react';
+import styleHeader from '../style/styleHeader';
 import {Box, Container} from'@material-ui/core/';
-import {makeStyles} from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles({
-  header:{
-    textAlign:'center',
-    fontFamily:['Black Ops One','cursive'],
-  },
-  title:{
-    textShadow:'3px 5px 2px #9c9c9c',
-    fontSize:60,
-    margin:0,
-    padding:0,
-  },
-  subTitle:{
-    fontSize:25,
-    margin:0,
-    padding:0,
-  },
-});
 
 function Header(){
-  const styles= useStyles();
+  const styles= styleHeader();
   return(
     <>
       <Container

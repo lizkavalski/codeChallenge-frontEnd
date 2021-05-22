@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import useStyles from '../style/styleChallenge';
+import styleChallenge from '../style/styleChallenge';
 import axios from 'axios';
 import ReactCardFlip from 'react-card-flip';
 import {Box, CircularProgress, Container} from'@material-ui/core/';
@@ -15,7 +15,7 @@ function Challenge(){
   });
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading]= useState(false);
-  const styles= useStyles();
+  const styles= styleChallenge();
   const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
   //const url = 'http://localhost:3030/random/challenge';
   
