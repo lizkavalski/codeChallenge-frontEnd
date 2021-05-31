@@ -1,24 +1,9 @@
 import React from 'react';
 import {Box, Grid} from'@material-ui/core/';
-import {makeStyles} from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles({
-  borderBox:{
-    textAlign: 'center',
-    // fontSize:'1.5em',
-    fontFamily:['Black Ops One','cursive'],
-    marginTop:20,
-    paddingBottom:20,
-  },
-  footnote:{
-    margin:0,
-    padding:0,
-  },
-});
+import styleFooter from '../style/styleFooter';
 
 function Footer(){
-  const styles= useStyles();
+  const styles= styleFooter();
   return(
     <Grid
       direction="column"
