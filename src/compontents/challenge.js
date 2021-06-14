@@ -16,8 +16,8 @@ function Challenge(){
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading]= useState(false);
   const styles= styleChallenge();
-  const url = 'https://code-challenges-backend.herokuapp.com/random/challenge';
-  //const url = 'http://localhost:3030/random/challenge';
+  const CARD_API = process.env.REACT_APP_CARD_API;
+  const url = `${CARD_API}`;
   
   const fetchData = async () => { 
     setLoading(true);
